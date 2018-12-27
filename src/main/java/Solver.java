@@ -100,7 +100,7 @@ class Solver {
             int x = coord.x;
             int y = coord.y;
             if(isThreeVertical(x, y, Cell.NUM1, cell, Cell.NUM1))
-                if (isThreeVertical(x - 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL)) {
+                if (isThreeVertical(x + 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL)) {
                     if (isThreeVerticalClosed(x, y, true))
                         if (cell == Cell.NUM1) {
                             flag.setFlagToCell(new Coord(x + 1, y - 1));
@@ -110,7 +110,7 @@ class Solver {
                             flag.setFlagToCell(new Coord(x + 1, y + 2));
                             return true;
                         }
-                } else if (isThreeVertical(x + 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL))
+                } else if (isThreeVertical(x - 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL))
                     if (isThreeVerticalClosed(x, y, false)) {
                         if (cell == Cell.NUM1) {
                             flag.setFlagToCell(new Coord(x - 1, y - 1));
@@ -162,7 +162,7 @@ class Solver {
             int x = coord.x;
             int y = coord.y;
             if(isFourVertical(x, y, Cell.NUM1, cell, cell, Cell.NUM1))
-                if (isFourVertical(x - 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL)) {
+                if (isFourVertical(x + 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL)) {
                     if (isFourVerticalClosed(x, y, true))
                         if (cell == Cell.NUM1) {
                             flag.setFlagToCell(new Coord(x + 1, y));
@@ -173,7 +173,7 @@ class Solver {
                             flag.setFlagToCell(new Coord(x + 1, y + 2));
                             return true;
                         }
-                } else if (isFourVertical(x + 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL))
+                } else if (isFourVertical(x - 1, y, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL, Cell.CLOSEDCELL))
                     if (isFourVerticalClosed(x, y, false)) {
                         if (cell == Cell.NUM1) {
                             flag.setFlagToCell(new Coord(x - 1, y));
